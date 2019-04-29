@@ -6,3 +6,7 @@ tr.killed{
 tr.invisible{
   opacity: 0.1;
 }
+
+.invisible{
+  display: none;
+}

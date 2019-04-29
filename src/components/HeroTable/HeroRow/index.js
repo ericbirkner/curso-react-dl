@@ -9,7 +9,7 @@ const HeroRow = ({name, race, age, weapon,id,handleClick,handleVisible,killed, v
     <td>
       <div className="controls ">
         <div onClick={(e) => handleClick(id, e)}>☠ Kill</div>
-        <div onClick={(e) => handleVisible(id, e)}>💍 Use Ring</div>
+        <div className= {visible ? 'invisible' : ''} onClick={(e) => handleVisible(id, e)}>💍 Use Ring</div>
       </div>
     </td>
   </tr>
