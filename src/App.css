@@ -1,0 +1,8 @@
+tr.killed{
+  background-color: #ccc;
+  color: white;
+}
+
+tr.invisible{
+  opacity: 0.1;
+}
