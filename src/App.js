@@ -55,7 +55,7 @@ class App extends Component {
     }
 
   render() {
-    const {filterText} = this.state
+    const {filterText,isKilled} = this.state
 
     let filteredHeroes = heroes
 
@@ -63,6 +63,10 @@ class App extends Component {
       filteredHeroes = heroes.filter(hero => {
         return hero.name.includes(filterText)
       })
+    }
+
+    if (isKilled) {
+      filteredHeroes.sort((a, b) => (a.killed > b.killed) ? 1 : -1)
     }
 
     return (
