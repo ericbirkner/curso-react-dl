@@ -5,11 +5,11 @@ import HeroTable from './components/HeroTable'
 import './App.css';
 
 const heroes = [
-  { name: 'Gandalf', race: 'Maia', age: '2019', weapon: 'Staff 🏑' },
-  { name: 'Aragorn', race: 'Human', age: '120', weapon: 'Sword ⚔' },
-  { name: 'Legolas', race: 'Elf', age: '200', weapon: 'Bow 🏹' },
-  { name: 'Gimli', race: 'Dwarf', age: '139', weapon: 'Axe ⚒' },
-  { name: 'Frodo', race: 'Hobbit', age: '33', weapon: 'Dagger 🗡' }
+  { name: 'Gandalf', race: 'Maia', age: '2019', weapon: 'Staff 🏑',killed:false, visible:true },
+  { name: 'Aragorn', race: 'Human', age: '120', weapon: 'Sword ⚔',killed:false, visible:true },
+  { name: 'Legolas', race: 'Elf', age: '200', weapon: 'Bow 🏹',killed:false, visible:true },
+  { name: 'Gimli', race: 'Dwarf', age: '139', weapon: 'Axe ⚒',killed:false, visible:true },
+  { name: 'Frodo', race: 'Hobbit', age: '33', weapon: 'Dagger 🗡',killed:false, visible:true }
 ]
 
 class App extends Component {
@@ -36,15 +36,21 @@ class App extends Component {
      this.setState(state => ({
        isKilled: true
      }));
-     document.getElementById(id).classList.toggle("killed");
-     console.log(id);
+     heroes.map((value, index, array) => {
+       //console.log(value.killed);
+       value.killed = false;
+     });
+     heroes[id].killed=true;
+     console.log(heroes[id]);
    }
 
    handleVisible(id,e) {
       this.setState(state => ({
         isVisible: false
       }));
-      document.getElementById(id).classList.toggle("invisible");
+      //document.getElementById(id).classList.toggle("invisible");
+
+      heroes.splice(id, 1)
       console.log(id);
     }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
-const HeroRow = ({name, race, age, weapon,id,handleClick,handleVisible}) => (
-  <tr className="character-row" id={id}>
+const HeroRow = ({name, race, age, weapon,id,handleClick,handleVisible,killed, visible}) => (
+  <tr className= {killed ? 'killed' : 'character-row'} id={id}>
     <td>{name}</td>
     <td>{race}</td>
     <td>{age}</td>
